@@ -1,6 +1,24 @@
-# tpl-go-function
+# Small Cow 🐮
 
-## How to use it?
+## Build, Run, Release
 
-- Change values in `.release.env`
-- Change the name in `go.mod`
+- Build the wasm function:  run `./build.sh`
+- Start the Simplism service: run `./start.sh`
+- Call the service: 
+  ```bash
+  curl http://localhost:8080 \
+  -d '👋 Hello World 🌍'
+
+  # output:
+  ^__^
+  (oo)\_______
+  (__)\       )\/\
+      ||----w |
+      ||     ||
+  👋 Hello World 🌍
+  ```
+- Create a release:
+  - Change the tag in `.release.env`
+  - Run `./create-release.sh`
+
+## Deploy
