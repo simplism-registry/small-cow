@@ -22,3 +22,23 @@
   - Run `./create-release.sh`
 
 ## Deploy
+
+Once the release created, you can use this URL to download the wasm function: https://github.com/simplism-registry/small-cow/releases/download/v0.0.0/small-cow.wasm
+
+If you installed Simplism, run the below command:
+```bash
+simplism listen small-cow.wasm handle \
+--http-port 8080 \
+--wasm-url https://github.com/simplism-registry/small-cow/releases/download/v0.0.0/small-cow.wasm
+```
+
+Otherwise, you can use Docker:
+```bash
+docker run \
+-p 8080:8080 \
+-v $(pwd):/app \
+--rm k33g/simplism:0.0.7 \
+/simplism listen ./app/small-cow.wasm handle \
+--http-port 8080 \
+--wasm-url https://github.com/simplism-registry/small-cow/releases/download/v0.0.0/small-cow.wasm
+```
